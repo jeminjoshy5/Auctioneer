@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('./public'))
 
 const db =
-   'mongodb+srv://Auction1122:Auction1122@cluster0.4teukan.mongodb.net/dbAuctioneer'
+   'mongodb+srv://heisenberg:heisenberg@cluster0.xzwag.mongodb.net/test'
 
 const httpServer = createServer(app)
 const io = new Server(httpServer, {
@@ -430,19 +430,19 @@ app.get('/FetchDealerData', async (req, res) => {
 
 
 app.get('/FetchDealerVerifyData', async (req, res) => {
-   const fetchdealer = await Dealer.find({__v:0})
+   const fetchdealer = await Dealer.find({ __v: 0 })
    res.send({ fetchdealer })
 })
 
 
 app.get('/FetchDealerVerifyAccepted', async (req, res) => {
-   const fetchdealer = await Dealer.find({__v:1})
+   const fetchdealer = await Dealer.find({ __v: 1 })
    res.send({ fetchdealer })
 })
 
 
 app.get('/FetchDealerVerifyReject', async (req, res) => {
-   const fetchdealer = await Dealer.find({__v:2})
+   const fetchdealer = await Dealer.find({ __v: 2 })
    res.send({ fetchdealer })
 })
 
